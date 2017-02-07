@@ -22,3 +22,25 @@ $factory->define(Playground\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(Playground\Seller::class, function (Faker\Generator $faker) {
+    $user_ids = \Playground\User::all('id')->toArray();
+
+    return [
+        'user_id' => $faker->randomElement($user_ids)['id']
+    ];
+});
+
+$factory->define(Playground\Shop::class, function (Faker\Generator $faker) {
+    $seller_ids = \Playground\Seller::all('id')->toArray();
+
+    return [
+        'name' => $faker->word,
+        'slug' => $faker->unique()->word,
+        'profile_image' => $faker->imageUrl(150, 150, 'people'),
+        'cover_image' => $faker->imageUrl(800, 300),
+        'location' => $faker->address,
+        'seller_id' => $faker->randomElement($seller_ids)['id']
+    ];
+});
