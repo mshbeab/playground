@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Playground\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
