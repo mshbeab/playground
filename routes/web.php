@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
+
+
+
 Route::resource('shops','ShopController');
