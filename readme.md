@@ -1,4 +1,3 @@
 # playground
 
-### A Laravel project playground
-
+## A boilerplate Laravel Project
