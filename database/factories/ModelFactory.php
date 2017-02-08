@@ -38,8 +38,9 @@ $factory->define(Playground\Shop::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
         'slug' => $faker->unique()->word,
+        'description' => $faker->paragraph(2),
         'profile_image' => $faker->imageUrl(150, 150, 'people'),
-        'cover_image' => $faker->imageUrl(800, 300),
+        'cover_image' => $faker->imageUrl(1200, 300),
         'location' => $faker->address,
         'seller_id' => $faker->randomElement($seller_ids)['id']
     ];

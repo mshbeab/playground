@@ -14,7 +14,8 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return Shop::paginate(10);
+        $shops = Shop::with('seller')->paginate(12);
+        return view('shop.list', compact('shops'));
     }
 
     /**

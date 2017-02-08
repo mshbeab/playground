@@ -10,4 +10,9 @@ class Shop extends Model
     {
         return 'slug';
     }
+
+    public function seller()
+    {
+        return $this->belongsTo(Seller::class);
+    }
 }

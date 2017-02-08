@@ -17,6 +17,7 @@ class CreateShopsTable extends Migration
             $table->increments('id');
             $table->integer('seller_id')->unsigned();
             $table->string('name');
+            $table->text('description')->nullable();
             $table->string('slug')->unique();
             $table->string('location');
             $table->string('profile_image');
