@@ -7,7 +7,7 @@
                     <img class="img-thumbnail img-circle img-right" style="position: relative;top: 0px;display: inline;" src="{{ $shop->profile_image }}"/>
                 </div>
                 <div class="col-md-8">
-                    <a href="{{ url('shops', $shop->slug) }}"><h2 >{{ $shop->name }}</h2></a>
+                    <a href="{{ url('shops', $shop->slug) }}"><h4 >{{ $shop->name }}</h4></a>
                     <small >Open Since {{ $shop->created_at->format('M Y') }}</small>
                 </div>
             </div>

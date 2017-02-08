@@ -62,6 +62,12 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            body{
+                background-image: url('img/bg.jpeg');
+                background-size: cover;
+            }
+
         </style>
     </head>
     <body>
@@ -83,8 +89,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Documentation</a>
-                    <a href="#">GitHub</a>
+                    <a href="{{ url('/shops') }}">Shops</a>
+                    <a href="#">Jump</a>
+                    <a href="#">How doea it work ?</a>
+                    <a href="#">Jump</a>
                 </div>
             </div>
         </div>
