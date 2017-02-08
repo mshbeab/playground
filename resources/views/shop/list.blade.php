@@ -10,10 +10,10 @@
             @each('shop.header', $shops, 'shop')
         </div>
 
-        {{--<ul class="pager">--}}
-            {{--<li class="previous disabled"><a href='{{ url('shops', ['page=1']) }}'>← Prev</a></li>--}}
-            {{--<li class="next"><a class="withripple" href='{{ url('shops') }}'>Next Page →</a></li>--}}
-        {{--</ul>--}}
-        {{ $shops->links() }}
+        <ul class="pager">
+            <li class="previous"><a href='{{ $shops->previousPageUrl() }}'>← Prev</a></li>
+            <li class="next"><a class="withripple" href='{{ $shops->nextPageUrl() }}'>Next Page →</a></li>
+        </ul>
+
     </div>
 @endsection

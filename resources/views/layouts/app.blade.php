@@ -22,11 +22,12 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+
     </script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav id='navbar' class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -83,9 +84,33 @@
         </nav>
 
         @yield('content')
+
+        <footer class="footer">
+            <div class="text-center text-capitalize">{{ sprintf(' %s All Rights recived %s', config('app.name'), date('Y')) }}</div>
+        </footer>
     </div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            var menu = jQuery('.navbar');
+            var origOffsetY = menu.offset().top;
+
+            function scroll() {
+                if (jQuery(window).scrollTop() > origOffsetY) {
+                    jQuery('#navbar').addClass('navbar-fixed-top');
+                    jQuery('.content').addClass('menu-padding');
+                } else {
+                    jQuery('#navbar').removeClass('navbar-fixed-top');
+                    jQuery('.content').removeClass('menu-padding');
+                }
+            }
+
+            document.onscroll = scroll;
+
+        });
+    </script>
 </body>
 </html>
