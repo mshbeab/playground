@@ -8,93 +8,34 @@
         <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            body{
-                background-image: url('img/bg.jpeg');
-                background-size: cover;
-            }
-
-        </style>
+        <link href="/css/app.css" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    {{ config('app.name') }}
-                </div>
-
-                <div class="links">
-                    <a href="{{ url('/shops') }}">Shops</a>
-                    <a href="#">Jump</a>
-                    <a href="#">How doea it work ?</a>
-                    <a href="#">Jump</a>
+        <section class="hero is-info is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        {{ config('app.name') }}
+                    </h1>
+                    <h2 class="subtitle">
+                        {{ config('app.description') }}
+                    </h2>
                 </div>
             </div>
-        </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="heading">
+                    <h4 class="title">Menu</h4>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="/shops">Shops</a></li>
+                        <li class="nav-item"><a href="#">How Does it work</a></li>
+                        <li class="nav-item"><a href="#">About Us</a></li>
+                        <li class="nav-item"><a href="/register">Register</a></li>
+                        <li class="nav-item"><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

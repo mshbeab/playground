@@ -15,4 +15,14 @@ class Shop extends Model
     {
         return $this->belongsTo(Seller::class);
     }
+
+    public function gigs()
+    {
+        return $this->hasMany(Gig::class);
+    }
+
+    public function workingHours()
+    {
+        //TODO: Implement working hours logic
+    }
 }

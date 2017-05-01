@@ -24,24 +24,15 @@
 
 
 @section('shop.content')
-    <div class="panel panel-default ">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-tabs nav-justified">
-                    <li class="active"><a data-toggle="tab" href="#home">Gigs</a></li>
-                    <li ><a  data-toggle="tab" href="#shipping">Shipping & Payment</a></li>
-                    <li ><a data-toggle="tab" href="#reviews">Reviews</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel-body tab-content">
-                    <div id="home" class="tab-pane fade in active text-justify"> @include('shop.products') </div>
-                    <div id="shipping" class="tab-pane fade in text-justify">  @include('shop.shipping')</div>
-                    <div id="reviews" class="tab-pane fade in text-justify">  @include('shop.reviews') </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <tabs>
+        <tab name="Gigs" :selected="true">
+            @include('shop.gig.list')
+        </tab>
+        <tab name="Terms & Conditions">
+            @include('shop.terms')
+        </tab>
+        <tab name="Reviews">
+            @include('shop.reviews')
+        </tab>
+    </tabs>
 @endsection
